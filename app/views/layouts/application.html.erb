@@ -9,7 +9,9 @@
 </head>
 <body>
   <%= render template: "/partials/_movie_header.html.erb" %>
-  <%= link_to "HOME", root_path %>
+  <div class="home">
+    <%= link_to "HOME", root_path %>
+  </div>
   <%= yield %>
   <%= render template: "/partials/_movie_footer.html.erb" %>
 </body>
