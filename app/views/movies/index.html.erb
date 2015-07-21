@@ -2,8 +2,20 @@
 <%= link_to "sort by genre", :sort => "genre" %>
 <%= link_to "sort by release date", :sort => "release_date"%>
 
+<button class="new-movies">Populate New Movies</button>
+
 <div class="main-body">
   <div class="date"><%= Time.now.strftime("%B %d, %Y") %></div>
-  <div class="movie-wrapper">
-  </div>
+    <div class="movie-wrapper">
+      <% @movies.each do |movie|%>
+        <a href="/movies/<%=movie.id%>">
+          <div data-id="<%=movie.id%>" class="movie-tile">
+            <div class="movie-tile-inner">
+              <img src="<%=movie.thumbnail%>" class="movie-thumbnail">
+              <%=movie.title%>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
 </div>
