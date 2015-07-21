@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20150720214241) do
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.string   "genre"
+    t.string   "thumbnail"
+    t.string   "url"
     t.date     "release_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150720214241) do
     t.string   "name"
     t.string   "email"
     t.text     "content"
+    t.integer  "score"
     t.integer  "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
