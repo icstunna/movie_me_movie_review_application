@@ -5,6 +5,13 @@ RSpec.describe Movie, type: :model do
     Movie.destroy_all
   end
 
+  it {validate_presence_of(:title)}
+  it {validate_presence_of(:genre)}
+  it {validate_presence_of(:thumbnail)}
+  it {validate_presence_of(:url)}
+  it {validate_presence_of(:release_date)}
+  it {have_many(:reviews)}
+
   describe "uniqueness" do
     let(:movie) {Movie.new(title: "Fast 5",
                            genre: "Action",
