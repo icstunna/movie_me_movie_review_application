@@ -18,10 +18,13 @@ $(document).on('page:change', function() {
       data: {data: data}
     })
 
-    request.done(function(data) {
-      console.log("works")
+    request.success(function(data) {
+      // debugger
+      console.log(data)
+      for (var i = 0 ; i <= data["movies"].length; i++) {
+        $('.movie-wrapper').append("<div data-id="+i+" class='movie-tile'><img src="+data["movies"][i]["thumbnail"]+" class='movie-thumbnail'>"+data["movies"][i]["title"]+"</div>")
+      }
     })
-    console.log(data["results"][0]);
   }),
 
   request.error(function(err) {

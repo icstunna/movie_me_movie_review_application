@@ -21,6 +21,8 @@ class MoviesController < ApplicationController
         next
       end
     end
+
+    render :json => {movies: Movie.all}
   end
 
   def edit

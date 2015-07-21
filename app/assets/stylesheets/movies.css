@@ -1,0 +1,14 @@
+.movie-wrapper {
+  border: 1px solid red;
+  display: block;
+}
+
+.movie-tile {
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.movie-thumbnail {
+  border: 1px solid red;
+  display: block;
+}
