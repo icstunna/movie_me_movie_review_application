@@ -15,9 +15,9 @@ Begin setting your environment as follows:
 
   **Step 1:** *Install bundler in the repo via terminal command "gem install bundler"*
 
-  **Step 2:** "bundle install" the gems from the Gemfile from your terminal
-  *Step 3: Create the database in your terminal "bin/rake db:create"
-  *Step 4: Migrate the database "bin/rake db:migrate"
-  *Step 5: Set up the Rspec test environment in your terminal via "rake db:test:prepare"
+  **Step 2:** *"bundle install" the gems from the Gemfile from your terminal*
+  **Step 3:** *Create the database in your terminal "bin/rake db:create"*
+  **Step 4:** *Migrate the database "bin/rake db:migrate"*
+  **Step 5:** *Set up the Rspec test environment in your terminal via "rake db:test:prepare"*
 
 Your environment should now be prepared. If you have any further questions please feel free to reach out me.
