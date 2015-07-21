@@ -1,19 +1,26 @@
-<h1><%= @movie.title %></h1>
+<div class="movie-title"><%= @movie.title %></div>
 
-<%= form_for :review, as: :post, url: movie_reviews_path(@movie), method: :create do |f| %>
-  name: <%= f.text_field :name %><br/>
-  email: <%= f.text_field :email %><br/>
-  content: <%= f.text_area :content%><br/>
-  score: <%= f.text_field :score%><br/>
-  <%= f.submit %>
-<% end %>
+<div class="reviews">
+  <ul>
+    <% @movie.reviews.each do |review| %>
+      <li>
+        <div class="review-name"><%= review.name %></div>
+        <div class="review-email"><%= review.email %></div>
+        <div class="review-score">Scored: <%= review.score %></div>
 
-<ul>
-  <% @movie.reviews.each do |review| %>
-    <li>
-      <%= review.name %>
-      <%= review.content %>
-      <%= review.email %>
-    </li>
-  <%end%>
-</ul>
+        <div class="review-content"><%= review.content %></div>
+      </li>
+    <%end%>
+  </ul>
+</div>
+
+<div class="review-nav">LEAVE A REVIEW</div>
+<div class="review-form">
+  <%= form_for :review, as: :post, url: movie_reviews_path(@movie), method: :create do |f| %>
+    Name: <%= f.text_field :name %>
+    Email: <%= f.text_field :email %>
+    Score (1-10): <%= f.text_field :score%><br><br>
+    Review: <%= f.text_area :content, :cols => "80", :rows => "2" %><br><br>
+    <%= f.submit %>
+  <% end %>
+</div>

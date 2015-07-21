@@ -1,13 +1,16 @@
-<h1>All Reviews!</h1>
+<div class="title">Reviews</div>
 
-<ul>
-  <% @reviews.each do |review| %>
-  <div>
-    <h3><%= review.movie.title %></h3>
-      <li>
-        <%= review.name %>
-        <%= review.content %>
-      </li>
-  </div>
-  <% end %>
-</ul>
+<div class="reviews">
+  <ul>
+    <% @reviews.each do |review| %>
+    <div>
+        <li>
+          <div class="movie-name"><%= review.movie.title %></div>
+          <div class="review-name"><%= review.name %></div>
+          <div class="review-score">Scored: <%= review.score %></div>
+          <div class="review-content"><%= review.content %></div>
+        </li>
+    </div>
+    <% end %>
+  </ul>
+</div>

@@ -8,12 +8,13 @@
 
 .movie-tile {
   border: 5px solid #C0C6C9;
+  background-color: #ffffff;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.5em;
   font-family: 'Oswald', sans-serif;
   line-height: 0.97;
-  float: left;
+  float: right;
   position: relative;
   margin-right: 2%;
   margin-bottom: 2%;

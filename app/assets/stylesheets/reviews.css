@@ -1,0 +1,49 @@
+.movie-title, .title {
+  font-size: 3.5em;
+  font-family: 'Oswald', sans-serif;
+  margin: 3%;
+}
+
+.reviews {
+  text-align: left;
+  width: 64%;
+  padding: 2% 2% 2% 16%;
+  margin: 2% 0% 2% 10%;
+  background-color: #ffffff;
+}
+
+.review-name , .movie-name, .review-score {
+  font-family: 'Oswald', sans-serif;
+  width: 15%;
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+.review-content {
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+.review-email {
+  width: 25%;
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+.review-nav {
+  background-color: #C0C6C9;
+  color: #F9F9F9;
+  padding: 0.5%;
+  width: 80%;
+  text-align: center;
+  margin: 2% 0% 2% 10%;
+  font-size: 1.3em;
+}
+
+.review-form {
+  width: 59%;
+  padding: 2% 2% 2% 20%;
+  margin: 2% 0% 2% 10%;
+  background-color: #ffffff;
+  text-align: left;
+}
