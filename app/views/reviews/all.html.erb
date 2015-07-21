@@ -2,13 +2,13 @@
 
 <div class="reviews">
   <ul>
-    <% @reviews.each do |review| %>
+    <% @reviews.each do |reviewz| %>
     <div>
         <li>
-          <div class="movie-name"><%= review.movie.title %></div>
-          <div class="review-name"><%= review.name %></div>
-          <div class="review-score">Scored: <%= review.score %></div>
-          <div class="review-content"><%= review.content %></div>
+          <div class="movie-name"><%= reviewz.movie.title %></div>
+          <div class="review-name"><%= reviewz.name %></div>
+          <div class="review-score">Scored: <%= reviewz.score %></div>
+          <div class="review-content"><%= reviewz.content %></div>
         </li>
     </div>
     <% end %>

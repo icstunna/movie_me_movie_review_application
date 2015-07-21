@@ -17,4 +17,15 @@ RSpec.describe ReviewsController, type: :controller do
     end
   end
 
+  describe "#all" do
+    it "successfully reaches the all route" do
+      get :all
+      expect(response).to be_success
+    end
+
+    it "shows the all reviews page" do
+      get :all
+      expect(response).to render_template(:all)
+    end
+  end
 end

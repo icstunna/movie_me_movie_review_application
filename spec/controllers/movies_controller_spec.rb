@@ -10,7 +10,24 @@ RSpec.describe MoviesController, type: :controller do
                            release_date: Date.new(2011, 4, 29))
   end
 
+  describe "#index" do
+    it "successfully hits the index route" do
+      get :index
+      expect(response).to be_success
+    end
+
+    it "shows the index page" do
+      get :index
+      expect(response).to render_template(:index)
+    end
+  end
+
   describe "#show" do
+    it "successfully hits the show route" do
+      get :show, id: @movie.id
+      expect(response).to be_success
+    end
+
     it "shows the movie page" do
       get :show, id: @movie.id
       expect(response).to render_template(:show)
