@@ -29,6 +29,8 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.where(id: params[:id])
+    @reviews = Movie.where(id: params[:id]).first.reviews
   end
 
   def update
