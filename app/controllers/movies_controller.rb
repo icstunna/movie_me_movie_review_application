@@ -1,17 +1,26 @@
 class MoviesController < ApplicationController
   def index
+    @movies = Movie.all
   end
 
   def new
   end
 
   def create
-    p "*" *99
-    p params[:x]
-    # movies = params[:x]
-    # movies.each do |movie_hash|
-    #   p movie_hash
-    # end
+    movies_data = params[:data]
+    movies_data["results"].each do |movie_object|
+      begin
+        Movie.create!(title: movie_object[1]["name"],
+                      genre: movie_object[1]["genre"],
+                      thumbnail: movie_object[1]["thumbnail"],
+                      url: movie_object[1]["url"],
+                      release_date: movie_object[1]["rlsdate"]
+                      )
+      rescue => e
+        p e
+        next
+      end
+    end
   end
 
   def edit

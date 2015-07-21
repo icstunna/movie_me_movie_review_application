@@ -6,7 +6,7 @@ $(document).on('page:change', function() {
     data: {},
     datatype: 'json',
     beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "MxqqvbLiSHmshk7YBEE99SbHQOfip1rdT7pjsn2eUqlD5cINfx");
+    xhr.setRequestHeader("X-Mashape-Authorization", "G4Cfon1ngimsh9hwXG4SV8smeutQp14iHIkjsnipeck8y0F5zi");
     }
   });
 
