@@ -6,8 +6,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    p "*" * 99
-    p params
     @movie = Movie.find(params[:movie_id])
     @review = Review.create(reviews_params)
     @movie.reviews << @review

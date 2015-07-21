@@ -1,0 +1,14 @@
+.movie-footer {
+  background-color: #C55B4A;
+  display: block;
+  min-height: 100px;
+  padding-top: 75px;
+  padding-left: 15px;
+}
+
+.footer-body {
+  font-size: 1em;
+  color: #F9F9F9;
+  text-align: center;
+  line-height: 0.9;
+}

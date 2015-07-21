@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TCICodingChallenge</title>
+  <title>Movie Me</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Dosis|Oswald:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render template: "/partials/_movie_header.html.erb" %>
+  <%= yield %>
+  <%= render template: "/partials/_movie_footer.html.erb" %>
 </body>
 </html>
