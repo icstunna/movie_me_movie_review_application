@@ -16,7 +16,7 @@ $(document).on('page:change', function() {
       data: {},
       datatype: 'json',
       beforeSend: function(xhr) {
-      xhr.setRequestHeader("X-Mashape-Authorization", ENV["MASHAPE_KEY"]);
+      xhr.setRequestHeader("X-Mashape-Authorization", "G4Cfon1ngimsh9hwXG4SV8smeutQp14iHIkjsnipeck8y0F5zi");
       }
     });
 
