@@ -1,2 +1,19 @@
-<h1><%= @movie.first.title %></h1>
+<h1><%= @movie.title %></h1>
 
+<%= form_for :review, as: :post, url: movie_reviews_path(@movie), method: :create do |f| %>
+  name: <%= f.text_field :name %><br/>
+  email: <%= f.text_field :email %><br/>
+  content: <%= f.text_area :content%><br/>
+  score: <%= f.text_field :score%><br/>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @movie.reviews.each do |review| %>
+    <li>
+      <%= review.name %>
+      <%= review.content %>
+      <%= review.email %>
+    </li>
+  <%end%>
+</ul>

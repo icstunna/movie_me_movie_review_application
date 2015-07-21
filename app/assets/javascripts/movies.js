@@ -22,7 +22,7 @@ $(document).on('page:change', function() {
       // debugger
       console.log(data)
       for (var i = 0 ; i <= (data["movies"].length + 1) ; i++) {
-        $('.movie-wrapper').append("<a href='/movies/"+(i+1)+"'><div data-id="+(i+1)+" class='movie-tile'><img src="+data["movies"][i]["thumbnail"]+" class='movie-thumbnail'>"+data["movies"][i]["title"]+"</div></a>")
+        $('.movie-wrapper').append("<a href='/movies/"+(i+1)+"'><div data-id="+(i+1)+" class='movie-tile'><img src="+data["movies"][i]["thumbnail"]+" class='movie-thumbnail'><span class='movie-title'>"+data["movies"][i]["title"]+"<span></div></a>")
       }
     })
   }),

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+  get 'reviews/all' => 'reviews#all'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -34,7 +36,8 @@ Rails.application.routes.draw do
   #   end
 
   resources :movies do
-    resources :reviews
+    resources :reviews do
+    end
   end
 
   # Example resource route with more complex sub-resources:

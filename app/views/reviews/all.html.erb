@@ -1,0 +1,13 @@
+<h1>All Reviews!</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+  <div>
+    <h3><%= review.movie.title %></h3>
+      <li>
+        <%= review.name %>
+        <%= review.content %>
+      </li>
+  </div>
+  <% end %>
+</ul>
