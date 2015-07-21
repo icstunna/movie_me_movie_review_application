@@ -1,9 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-  end
-
-  def new
-  end
 
   def create
     @movie = Movie.find(params[:movie_id])
@@ -12,23 +7,12 @@ class ReviewsController < ApplicationController
     redirect_to movie_path(@movie)
   end
 
-  def edit
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   def all
     @reviews = Review.all
   end
 
   private
+    #The internet is scary and should use strong parameters
     def reviews_params
       params.require(:review).permit(:name, :email, :content, :score)
     end

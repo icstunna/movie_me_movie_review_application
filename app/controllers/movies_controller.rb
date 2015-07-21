@@ -3,11 +3,9 @@ class MoviesController < ApplicationController
     @movies = Movie.order(params[:sort])
   end
 
-  def new
-  end
-
   def create
     movies_data = params[:data]
+    #Below is my algorithm for parsing the API object into fields that I may use to save in my database
     movies_data["results"].each do |movie_object|
       Movie.create!(title: movie_object[1]["name"],
                     genre: movie_object[1]["genre"],
@@ -18,19 +16,12 @@ class MoviesController < ApplicationController
 
     end
 
+    # This returns a JSON object back to my Dom to be appended unto the body once parsed
     render :json => {movies: Movie.all}
-  end
-
-  def edit
   end
 
   def show
     @movie = Movie.find(params[:id])
   end
 
-  def update
-  end
-
-  def destroy
-  end
 end
