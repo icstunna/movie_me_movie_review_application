@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @movie = Movie.find(params[:movie_id])
-    @review = Review.create(reviews_params)
+    @review = Review.create!(reviews_params)
     @movie.reviews << @review
     redirect_to movie_path(@movie)
   end
