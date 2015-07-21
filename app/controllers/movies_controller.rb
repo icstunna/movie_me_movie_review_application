@@ -9,17 +9,13 @@ class MoviesController < ApplicationController
   def create
     movies_data = params[:data]
     movies_data["results"].each do |movie_object|
-      begin
-        Movie.create!(title: movie_object[1]["name"],
-                      genre: movie_object[1]["genre"],
-                      thumbnail: movie_object[1]["thumbnail"],
-                      url: movie_object[1]["url"],
-                      release_date: movie_object[1]["rlsdate"]
-                      )
-      rescue => e
-        p e
-        next
-      end
+      Movie.create!(title: movie_object[1]["name"],
+                    genre: movie_object[1]["genre"],
+                    thumbnail: movie_object[1]["thumbnail"],
+                    url: movie_object[1]["url"],
+                    release_date: movie_object[1]["rlsdate"]
+                    )
+
     end
 
     render :json => {movies: Movie.all}
