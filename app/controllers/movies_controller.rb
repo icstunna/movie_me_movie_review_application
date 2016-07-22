@@ -6,15 +6,22 @@ class MoviesController < ApplicationController
   def create
     movies_data = params[:data]
     #Below is my algorithm for parsing the API object into fields that I may use to save in my database
-    movies_data["results"].each do |movie_object|
-      Movie.create!(title: movie_object[1]["name"],
-                    genre: movie_object[1]["genre"],
-                    thumbnail: movie_object[1]["thumbnail"],
-                    url: movie_object[1]["url"],
-                    release_date: movie_object[1]["rlsdate"]
-                    )
 
-    end
+    # p "*" * 99
+    # p movies_data
+    # p movies_data["data"]["0"]["title"]
+    # p movies_data["data"]["0"]["genre"]
+    # p movies_data["data"]["0"]["poster"]
+    # p movies_data["data"]["0"]["url"]
+    # p movies_data["data"]["0"]["release-date"]
+
+    Movie.create!(
+      title: movies_data["data"]["0"]["title"],
+      genre: movies_data["data"]["0"]["genre"],
+      thumbnail: movies_data["data"]["0"]["poster"],
+      url: movies_data["data"]["0"]["url"],
+      release_date: movies_data["data"]["0"]["release-date"]
+    )
 
     # This returns a JSON object back to my Dom to be appended unto the body once parsed
     render :json => {movies: Movie.all}
