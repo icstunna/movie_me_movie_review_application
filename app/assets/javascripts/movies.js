@@ -42,11 +42,8 @@ $(document).on('page:change', function() {
           })
 
           controller.success(function(data) {
-            console.log(data)
-            for (var i = 0 ; i <= (data["movies"].length + 1) ; i++) {
-              $('.movie-wrapper').append(
-                "<a href='/movies/"+(i+1)+"'><div data-id="+(i+1)+" class='movie-tile'><div class='movie-tile-inner'><img src="+data["movies"][i]["thumbnail"]+" class='movie-thumbnail'>"+data["movies"][i]["title"]+"</div></div></a>")
-            }
+            $('.movie-wrapper').append(
+              "<a href='/movies/"+data.movies.id+"'><div data-id="+data.movies.id+" class='movie-tile'><div class='movie-tile-inner'><img src="+data["movies"]["thumbnail"]+" class='movie-thumbnail'>"+data["movies"]["title"]+"</div></div></a>")
           })
         })
       }

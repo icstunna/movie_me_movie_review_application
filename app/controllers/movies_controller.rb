@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     # p movies_data["data"]["0"]["url"]
     # p movies_data["data"]["0"]["release-date"]
 
-    Movie.create!(
+    new_movie = Movie.create(
       title: movies_data["data"]["0"]["title"],
       genre: movies_data["data"]["0"]["genre"],
       thumbnail: movies_data["data"]["0"]["poster"],
@@ -23,8 +23,10 @@ class MoviesController < ApplicationController
       release_date: movies_data["data"]["0"]["release-date"]
     )
 
+    new_movie.save
+
     # This returns a JSON object back to my Dom to be appended unto the body once parsed
-    render :json => {movies: Movie.all}
+    render :json => {movies: new_movie}
   end
 
   def show
